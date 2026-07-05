@@ -1,0 +1,13 @@
+bin/
+
+data/churn_data.csv
+
+include/
+
+lib/
+
+lib64/
+
+models/
+
+pyvenv.cfg
