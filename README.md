@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # mlops-demo-customer-churn
 MLops project for Customer churn
 =======
@@ -88,4 +88,3 @@ Response:
   "churn_probability": 0.73
 }
 ```
->>>>>>> f2ee66c (first push for project)
