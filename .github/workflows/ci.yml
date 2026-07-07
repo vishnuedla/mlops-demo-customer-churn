@@ -1,0 +1,59 @@
+name: churnmodelci-churnmodelci
+
+on: 
+    push:
+        branches:
+            - main
+
+jobs:
+  name: modeltraning
+  runs-on: ubuntu-latest 
+    steps:
+        - name: checkout churnmodel
+          uses: actions/checkout@v3 
+        - name: set up python
+          uses: actions/setup-python@v4 
+          with:
+            python-version: 3.13
+        - name: training data
+          run: mkdir models
+          run: |
+            pip install -r requirements.txt
+            python train.python
+            |
+  name: API testing
+  runs-on: ubuntu-latest
+    steps:
+        - name : checkout churnmodel
+          uses: actions/checkout@v3 
+        - name: testing API
+          run: | 
+           python3 api.py &
+           curl -X POST http://localhost:8000/predict \
+           -H "Content-Type: application/json" \
+           -d '{
+           "age": 45,
+           "tenure_months": 24,
+           "monthly_charges": 79.99,
+           "total_charges": 1920.00,
+            "num_support_calls": 3
+  }'
+    |   
+  name: Building docker images
+  runs-on: ubuntu:latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v4
+        with:
+          context: .
+          push: true
+          tags: vishnu4538/churn-predictor:${{ github.run_id }}        
+
