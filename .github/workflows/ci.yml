@@ -29,12 +29,7 @@ jobs:
            "tenure_months": 24,
            "monthly_charges": 79.99,
            "total_charges": 1920.00,
-            "num_support_calls": 3  }'
-            
-  Image-building:
-    runs-on: ubuntu:latest
-    needs: modeltraning
-    steps:
+            "num_support_calls": 3  }
       - name: Checkout code
         uses: actions/checkout@v3
       - name: Log in to Docker Hub
