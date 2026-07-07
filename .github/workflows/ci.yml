@@ -1,11 +1,13 @@
-name: churnmodelci-churnmodelci
+name: churnmodelci
 
 on:
   push:
     branches:
      - main
-
-
+    paths-ignore:
+    - README.md
+    - .gitignore
+    
 jobs:
   modeltraning:
     runs-on: ubuntu-latest 
