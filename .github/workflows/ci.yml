@@ -36,10 +36,9 @@ jobs:
            "tenure_months": 24,
            "monthly_charges": 79.99,
            "total_charges": 1920.00,
-            "num_support_calls": 3
-  }'
-    |   
-  Building docker images:
+            "num_support_calls": 3  }'
+            
+  Build-and-push-docker images:
     runs-on: ubuntu:latest
     steps:
       - name: Checkout code
