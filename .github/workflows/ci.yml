@@ -22,19 +22,9 @@ jobs:
               pip install -r requirements.txt
               python generate_data.py
               python train.py
-              
-  API-testing:
-    runs-on: ubuntu-latest
-    needs: modeltraning
-    steps:
-        - name : checkout churnmodel
-          uses: actions/checkout@v3 
-        - name: testing API
-          run: | 
-           python3 api.py &
-           curl -X POST http://localhost:8000/predict \
-           -H "Content-Type: application/json" \
-           -d '{
+              python api.py &
+              curl -X POST http://localhost:8000/predict \
+           -H "Content-Type: application/json" \  -d '{
            "age": 45,
            "tenure_months": 24,
            "monthly_charges": 79.99,
@@ -43,7 +33,7 @@ jobs:
             
   Image-building:
     runs-on: ubuntu:latest
-    needs: API-testing
+    needs: modeltraning
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
