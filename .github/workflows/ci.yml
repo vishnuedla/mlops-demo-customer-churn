@@ -38,5 +38,5 @@ jobs:
         with:
           context: .
           push: true
-          tags: vishnu4538/churn-predictor:${{ github.run_id }}        
+          tags: vishnu4538/${{ secrets.reponame }}:${{ github.run_id }}        
 
