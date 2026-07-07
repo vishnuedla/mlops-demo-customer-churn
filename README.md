@@ -9,7 +9,7 @@ A simple demonstration of MLOps practices for a customer churn prediction model
 
 **Real-World Example:**
 
-Imagine you run a telecom company with thousands of customers. Some customers are happy and stay for years, while others leave (churn) after a few months. This model predicts which customers are likely to leave.
+Imagine you run a telecom company with thousands of customers. Some customers are happy and stay for years, while others leave (churn) after a few months. This model predicts which customers are likely to leave
 
 **Example Customer:**
 - **Sarah** is 45 years old
