@@ -3,7 +3,7 @@ MLops project for Customer churn
 =======
 # Churn Model MLOps Demo.
 
-A simple demonstration of MLOps practices for a customer churn prediction model.
+A simple demonstration of MLOps practices for a customer churn prediction model
 
 ## What Does This Model Do?
 
