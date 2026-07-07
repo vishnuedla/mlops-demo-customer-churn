@@ -17,16 +17,18 @@ jobs:
         with:
             python-version: '3.13'
       - name: training data
-        run: |
-              mkdir models
-              pip install -r requirements.txt
-              python generate_data.py
-              python train.py
-              python api.py &
-              curl -X POST http://localhost:8000/predict \
-           -H "Content-Type: application/json" \  
-           -d '{"age": 45,"tenure_months": 24, "monthly_charges": 79.99,"total_charges": 1920.00, "num_support_calls": 3  }'
-            
+        run: | 
+            mkdir models
+            pip install -r requirements.txt
+            python generate_data.py
+            python train.py
+            python api.py &
+            sleep 5
+            curl -X POST http://localhost:8000/predict \
+            -H "Content-Type: application/json" \
+            -d '{"age": 45,"tenure_months": 24, "monthly_charges": 79.99,"total_charges": 1920.00, "num_support_calls": 3 }'
+              | 
+                
       - name: Checkout code
         uses: actions/checkout@v3
       - name: Log in to Docker Hub
