@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: churn-predictor
+  namespace: chrunemodel
+spec:
+  selector:
+    app: churn-predictor
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 8000
