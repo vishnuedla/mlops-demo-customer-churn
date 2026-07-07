@@ -1,7 +1,7 @@
 
 MLops project for Customer churn
 =======
-# Churn Model MLOps Demo
+# Churn Model MLOps Demo.
 
 A simple demonstration of MLOps practices for a customer churn prediction model.
 
@@ -25,6 +25,8 @@ Imagine you run a telecom company with thousands of customers. Some customers ar
   "churn_probability": 0.73
 }
 ```
+
+
 
 **Translation:** Sarah has a **73% chance of canceling her subscription**. Why? She's calling support frequently (unhappy) and paying relatively high fees. Your business can now:
 - Offer her a discount
