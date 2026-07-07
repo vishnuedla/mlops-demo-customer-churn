@@ -4,6 +4,8 @@ data/churn_data.csv
 
 include/
 
+.dockerignore
+
 lib/
 
 lib64/
