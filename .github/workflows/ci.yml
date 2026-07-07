@@ -24,7 +24,7 @@ jobs:
               
   API-testing:
     runs-on: ubuntu-latest
-    needs: modeltraining
+    needs: modeltraning
     steps:
         - name : checkout churnmodel
           uses: actions/checkout@v3 
