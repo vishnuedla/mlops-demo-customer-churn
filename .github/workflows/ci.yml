@@ -1,14 +1,12 @@
 name: churnmodelci-churnmodelci
 
-on: 
-    push:
-        branches:
-            - main
+on: [push]
+
 
 jobs:
   name: modeltraning
-  runs-on: ubuntu-latest 
-    steps:
+   runs-on: ubuntu-latest 
+   steps:
         - name: checkout churnmodel
           uses: actions/checkout@v3 
         - name: set up python
@@ -22,8 +20,8 @@ jobs:
             python train.python
             |
   name: API testing
-  runs-on: ubuntu-latest
-    steps:
+   runs-on: ubuntu-latest
+   steps:
         - name : checkout churnmodel
           uses: actions/checkout@v3 
         - name: testing API
@@ -40,7 +38,7 @@ jobs:
   }'
     |   
   name: Building docker images
-  runs-on: ubuntu:latest
+    runs-on: ubuntu:latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
