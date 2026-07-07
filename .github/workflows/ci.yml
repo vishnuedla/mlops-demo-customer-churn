@@ -17,12 +17,12 @@ jobs:
         with:
             python-version: 3.13
       - name: training data
-        run: mkdir models
         run: |
-            pip install -r requirements.txt
-            python train.python
-            |
-  API testing:
+              mkdir models
+              pip install -r requirements.txt
+              python train.python
+              
+  API-testing:
     runs-on: ubuntu-latest
     steps:
         - name : checkout churnmodel
@@ -39,7 +39,7 @@ jobs:
            "total_charges": 1920.00,
             "num_support_calls": 3  }'
             
-  Build-and-push-docker images:
+  Image-building:
     runs-on: ubuntu:latest
     steps:
       - name: Checkout code
