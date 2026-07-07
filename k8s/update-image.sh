@@ -13,4 +13,3 @@ sleep 9s
 
 sed -i "19i\        image: docker.io/$username/${{ secrets.REPONAME }}:${{ github.run_id }}"  deployment.yml
 
-sleep 9s
